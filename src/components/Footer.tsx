@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { PORTFOLIO_DATA } from '@/lib/portfolio-data';
 import { useApp } from '@/context/AppContext';
+import Image from 'next/image';
 import { ShieldCheck, ArrowUp } from 'lucide-react';
 
 export const Footer: React.FC = () => {
@@ -20,8 +21,13 @@ export const Footer: React.FC = () => {
           {/* Col 1: Identity */}
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-palette-cream text-palette-dark flex items-center justify-center font-bold font-display text-base">
-                MR
+              <div className="relative w-10 h-10 rounded-xl overflow-hidden bg-palette-dark border border-palette-indigo flex items-center justify-center">
+                <Image
+                  src="/logo.png"
+                  alt="Mayur Aditya Rawat Logo"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <span className="text-lg font-bold text-palette-cream font-display">
                 {PORTFOLIO_DATA.personal.name}

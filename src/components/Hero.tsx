@@ -7,7 +7,8 @@ import { useApp } from '@/context/AppContext';
 import { trackWhatsAppClick } from '@/lib/analytics';
 import { BrowserFrame } from '@/components/ui/BrowserFrame';
 import { MobileFrame } from '@/components/ui/MobileFrame';
-import { MessageCircle, ArrowRight, ShieldCheck, CheckCircle2, Languages, Clock, Sparkles } from 'lucide-react';
+import Image from 'next/image';
+import { MessageCircle, ArrowRight, ShieldCheck, CheckCircle2, Languages, Clock } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   const { lang } = useApp();
@@ -32,8 +33,10 @@ export const Hero: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Location & Trust Badge */}
         <div className="flex flex-col items-center text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-palette-taupe text-palette-dark text-xs sm:text-sm font-semibold mb-6 shadow-sm animate-fade-in">
-            <Sparkles className="w-4 h-4 text-palette-indigo" />
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white border border-palette-taupe text-palette-dark text-xs sm:text-sm font-semibold mb-6 shadow-sm animate-fade-in">
+            <div className="relative w-4 h-4 rounded-full overflow-hidden bg-palette-dark flex-shrink-0">
+              <Image src="/logo.png" alt="Mayur Logo" fill className="object-cover" />
+            </div>
             <span>{t.heroTag}</span>
           </div>
 

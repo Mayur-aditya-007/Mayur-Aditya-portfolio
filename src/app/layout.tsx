@@ -44,6 +44,11 @@ export const metadata: Metadata = {
       'Full-stack engineering, automated backends, and bilingual WhatsApp AI bots for businesses and NGOs in India.',
     images: ['/projects/pssou-admissions/desktop.png'],
   },
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
   robots: {
     index: true,
     follow: true,

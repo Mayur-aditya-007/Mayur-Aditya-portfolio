@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { PORTFOLIO_DATA } from '@/lib/portfolio-data';
 import { useApp } from '@/context/AppContext';
 import { trackWhatsAppClick } from '@/lib/analytics';
+import Image from 'next/image';
 import { MessageCircle, Menu, X, Languages } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
@@ -48,8 +49,14 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand & Live Status */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-xl bg-palette-dark text-palette-cream flex items-center justify-center font-bold font-display text-lg shadow-md group-hover:bg-palette-indigo transition-all">
-            MR
+          <div className="relative w-10 h-10 rounded-xl overflow-hidden bg-palette-dark border border-palette-taupe shadow-md group-hover:scale-105 transition-all flex items-center justify-center">
+            <Image
+              src="/logo.png"
+              alt="Mayur Aditya Rawat Logo"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
           <div>
             <div className="font-display font-bold text-base sm:text-lg text-palette-dark flex items-center gap-2">
