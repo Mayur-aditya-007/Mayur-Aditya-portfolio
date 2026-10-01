@@ -21,7 +21,7 @@ export const StickyWhatsApp: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex items-center gap-3">
       {/* Popover Bubble */}
       {showTooltip && (
         <div className="hidden sm:flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white border-2 border-palette-taupe text-palette-dark text-xs font-semibold shadow-2xl backdrop-blur-md animate-fade-in">
@@ -45,10 +45,10 @@ export const StickyWhatsApp: React.FC = () => {
       <button
         onClick={handleClick}
         aria-label="Chat on WhatsApp"
-        className="relative w-14 h-14 rounded-full bg-emerald-700 hover:bg-emerald-800 text-white flex items-center justify-center shadow-2xl shadow-emerald-950/20 hover:scale-110 active:scale-95 transition-all duration-300 group"
+        className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-emerald-700 hover:bg-emerald-800 text-white flex items-center justify-center shadow-2xl shadow-emerald-950/20 hover:scale-110 active:scale-95 transition-all duration-300 group"
       >
-        <MessageCircle className="w-7 h-7 fill-current" />
-        <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-palette-dark border-2 border-white text-[9px] font-bold text-palette-cream flex items-center justify-center">
+        <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7 fill-current" />
+        <span className="absolute -top-0.5 -right-0.5 sm:-top-1 sm:-right-1 w-4 h-4 rounded-full bg-palette-dark border-2 border-white text-[9px] font-bold text-palette-cream flex items-center justify-center">
           1
         </span>
       </button>
