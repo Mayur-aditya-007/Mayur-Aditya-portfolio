@@ -30,10 +30,11 @@ export const metadata: Metadata = {
     siteName: `${PORTFOLIO_DATA.personal.name} Portfolio`,
     images: [
       {
-        url: '/projects/pssou-admissions/desktop.png',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: `${PORTFOLIO_DATA.personal.name} Portfolio`,
+        alt: `${PORTFOLIO_DATA.personal.name} Logo & Portfolio`,
+        type: 'image/png',
       },
     ],
   },
@@ -42,12 +43,16 @@ export const metadata: Metadata = {
     title: `${PORTFOLIO_DATA.personal.name} | Fast Websites, Backends & WhatsApp AI Bots`,
     description:
       'Full-stack engineering, automated backends, and bilingual WhatsApp AI bots for businesses and NGOs in India.',
-    images: ['/projects/pssou-admissions/desktop.png'],
+    images: ['/og-image.png'],
   },
   icons: {
-    icon: '/logo.png',
-    shortcut: '/logo.png',
-    apple: '/logo.png',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/logo.png', type: 'image/png', sizes: '32x32' },
+      { url: '/logo.png', type: 'image/png', sizes: '192x192' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/apple-icon.png',
   },
   robots: {
     index: true,
@@ -121,6 +126,18 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        {/* Favicon and Apple Touch Icon */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/logo.png" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" />
+
+        {/* WhatsApp & Social OpenGraph Image Meta */}
+        <meta property="og:image" content="https://mayurrawat.com/og-image.png" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:image" content="https://mayurrawat.com/og-image.png" />
+
         {/* JSON-LD Schema Markup */}
         <script
           type="application/ld+json"
