@@ -1,27 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #f2e9e4;
+  --foreground: #22223b;
+  --font-inter: 'Inter', sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
 }
 
 body {
+  background-color: var(--background);
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  overflow-x: hidden;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-outfit), var(--font-inter), sans-serif;
+}
+
+/* Custom Scrollbar styled with palette */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f2e9e4;
+}
+::-webkit-scrollbar-thumb {
+  background: #c9ada7;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9a8c98;
+}
+
+/* Subtle background grid pattern in palette */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(74, 78, 105, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(74, 78, 105, 0.07) 1px, transparent 1px);
+}
+
+/* Light Theme Card System */
+.palette-card {
+  background-color: #ffffff;
+  border: 1px solid #c9ada7;
+  box-shadow: 0 4px 20px -2px rgba(34, 34, 59, 0.05);
+}
+
+.palette-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.palette-card-hover:hover {
+  transform: translateY(-4px);
+  border-color: #9a8c98;
+  box-shadow: 0 12px 30px -6px rgba(34, 34, 59, 0.12);
+}
+
+.palette-pill {
+  background-color: #f2e9e4;
+  border: 1px solid #c9ada7;
+  color: #22223b;
+}
+
+/* Glowing accent effects */
+.glow-palette {
+  box-shadow: 0 0 35px -5px rgba(74, 78, 105, 0.2);
+}
+
+.glow-whatsapp {
+  box-shadow: 0 0 30px -5px rgba(37, 211, 102, 0.35);
+}
+
+html {
+  scroll-behavior: smooth;
 }
